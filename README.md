@@ -2,7 +2,7 @@
 
 ## A take-home challenge for software engineers.
 
-### Introduction
+### Background
 
 In web pages, heading elements (`h1-h6`) are used to impose semantic structure on the content appearing in the page. They can be used to break an article into chapters or sections, with `h1` being a top-level heading, `h2` being the heading one level down and so on. In other words the semantics of the heading elements arise from the weight they carry in relation to one another. However, there is no explicit containment hierarchy between these headings. Thus, it is the responsibility of the page author or generator to use heading elements in a semantically appropriate way.
 
@@ -69,8 +69,16 @@ Add a description of your approach to the bottom of this README, including a not
 1. You may assume web pages are static. That is, you do not need to evaluate inline or referenced javascript before processing the page, though you might like to briefly comment on how you'd modify your solution to support single-page websites and other dynamically generated pages.
 1. Tests are not required, but your code should be written, structured and commented as if it would be deployed to production.
 1. You may use any language, libraries, frameworks that you wish, but please ensure you've documented clearly how to install anything that's required to run your solution.
-1. There is no time limit, however we would not expect you to spend more than two hours completing this challenge.
+1. We would not expect you to spend more than two hours completing this challenge.
+
+### Criteria
+
+Assuming that you submit a "correct" solution, we are then first and foremost interested to see *how* you solve the problem. That is our top criterion below.
+
+1. Elegance/simplicity of your solution
+1. Elegance/readability of your code (note: this is very distinct from the first criterion!)
+1. Documentation and comments
 
 ### Submitting your solution
 
-Fork this repository, create your solution in your fork, then open a pull request against this (origin) repo.
+Fork this repository, create your solution in your fork, then open a pull request against this (origin) repo and let us know that you've completed the challenge.
