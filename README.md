@@ -24,6 +24,8 @@ For instance, consider this simple scenario:
 
 This is perfectly valid HTML, but semantically, it's confused because we have a `h2` element nested at a deeper level than a `h3` element that precedes it.
 
+This problem has a number of potential implications, including in the areas of SEO, machine translation from HTML to other formats, automatic summarisation, and generation of tables of contents.
+
 ### Challenge
 
 Your challenge, should you choose to accept it, is two-fold:
