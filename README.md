@@ -67,6 +67,7 @@ Add a description of your approach to the bottom of this README, including a not
 ### Notes
 
 1. You may assume web pages are static. That is, you do not need to evaluate inline or referenced javascript before processing the page, though you might like to briefly comment on how you'd modify your solution to support single-page websites and other dynamically generated pages.
+1. For the second part of the challenge, you may assume that structural elements are restricted to `div` and [sectioning content](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#Sectioning_content).
 1. Tests are not required, but your code should be written, structured and commented as if it would be deployed to production.
 1. You may use any language, libraries, frameworks that you wish, but please ensure you've documented clearly how to install anything that's required to run your solution.
 1. We would not expect you to spend more than two hours completing this challenge.
