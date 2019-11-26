@@ -11,22 +11,22 @@ Often, heading elements appear within the context of structural elements, such a
 For instance, consider this simple scenario:
 
 ```
-<div>
+<section>
   <h2>Heading 2</h2>
   <h3>Heading 3</h3>
-  <div>
+  <section>
     <h2>Another Heading 2</h2>
-  </div>
-</div>
+  </section>
+</section>
 ```
 
-This is perfectly valid HTML, but semantically, it's confused because we have a `h2` element nested at a deeper level than a `h3` element that precedes it.
+This is perfectly valid HTML, but semantically, it's kind of confused because we have a `h2` element nested at a deeper level than a `h3` element that precedes it.
 
 ### Challenge
 
 Your challenge, should you choose to accept it, is two-fold:
 1. Extract the semantic structure of any web page implied by heading elements `h1-h6`. The result should be a, possibly multi-rooted, tree structure. For example, the sequence `h1`, `h2`, `h3`, `h4`, `h2`, `h5` yeilds the tree `[h1, [h2, h2, [h3, [h4]], h2, [h5]]]` assuming a pre-ordered notation. Represent each heading as a key-value pair denoting the header tag and its content, like `"h1": "Heading 1"`. For this part of the task you can ignore any other elements in the page.
-1. Check the extracted semantic structure against the actual containment structure of the page, recording any incongruence by adding the out-of-place heading element to an array. For example, if the above heading sequence is shown in the context of the following structure, `<div>, <h1>, <h2>, <h2>, <h3>, <h4>, <div>, <h2>, <h5>, </div>, </div>`, the final `h2` element would be added to the array because the container structure puts that `h2` element in a nested position relative to the position of the `h4` element that precedes it, despite the `h2` element carrying more semantic weight. Use the same key-value representation as above.
+1. Check the extracted semantic structure against the actual containment structure of the page, recording any incongruence by adding the out-of-place heading element to an array. For example, if the above heading sequence is shown in the context of the following structure, `<section>, <h1>, <h2>, <h2>, <h3>, <h4>, <section>, <h2>, <h5>, </section>, </section>`, the final `h2` element would be added to the array because the container structure puts that `h2` element in a nested position relative to the position of the `h4` element that precedes it, despite the `h2` element carrying more semantic weight. Use the same key-value representation as above.
 
 Structure your code so that it can:
 1. be run as a standalone command on the command line, where the URL to process is given as an argument, e.g., `checkheadings https://foo.com`
@@ -70,6 +70,7 @@ Add a description of your approach to the bottom of this README, including a not
 1. Tests are not required, but your code should be written, structured and commented as if it would be deployed to production.
 1. You may use any language, libraries, frameworks that you wish, but please ensure you've documented clearly how to install anything that's required to run your solution.
 1. We would not expect you to spend more than two hours completing this challenge.
+1. If you need any of the requirements to be clarified, please just ask!
 
 ### Criteria
 
