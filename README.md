@@ -20,7 +20,7 @@ For instance, consider this simple scenario:
 </div>
 ```
 
-This is perfectly valid HTML, but semantically, it's a mess because we have a `h2` element nested at a deeper level than a `h3` element that precedes it.
+This is perfectly valid HTML, but semantically, it's confused because we have a `h2` element nested at a deeper level than a `h3` element that precedes it.
 
 ### Challenge
 
