@@ -12,15 +12,15 @@ For instance, consider this simple scenario:
 
 ```
 <div>
-  <h1>Heading 1</h1>
-  <h2>Heading 2</h2>
+  <h1>Heading 2</h1>
+  <h2>Heading 3</h2>
   <div>
-    <h1>Another Heading 1</h1>
+    <h1>Another Heading 2</h1>
   </div>
 </div>
 ```
 
-This is perfectly valid HTML, but semantically, it's a mess because we have a `h1` element nested at a deeper level than a `h2` element that precedes it.
+This is perfectly valid HTML, but semantically, it's a mess because we have a `h2` element nested at a deeper level than a `h3` element that precedes it.
 
 ### Challenge
 
