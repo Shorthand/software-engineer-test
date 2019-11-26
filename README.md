@@ -2,6 +2,8 @@
 
 ## A take-home challenge for software engineers.
 
+Please read these instructions in full before commencing the challenge.
+
 ### Background
 
 In web pages, heading elements (`h1-h6`) are used to impose semantic structure on the content appearing in the page. They can be used to break an article into chapters or sections, with `h1` being a top-level heading, `h2` being the heading one level down and so on. In other words the semantics of the heading elements arise from the weight they carry in relation to one another. However, there is no explicit containment hierarchy between these headings. Thus, it is the responsibility of the page author or generator to use heading elements in a semantically appropriate way.
@@ -84,3 +86,7 @@ Assuming that you submit a "correct" solution, we are then first and foremost in
 ### Submitting your solution
 
 Fork this repository, create your solution in your fork, then open a pull request against this (origin) repo and let us know that you've completed the challenge.
+
+---
+
+Your comments go here.
