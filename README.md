@@ -6,7 +6,7 @@
 
 In web pages, heading elements (`h1-h6`) are used to impose semantic structure on the content appearing in the page. They can be used to break an article into chapters or sections, with `h1` being a top-level heading, `h2` being the heading one level down and so on. In other words the semantics of the heading elements arise from the weight they carry in relation to one another. However, there is no explicit containment hierarchy between these headings. Thus, it is the responsibility of the page author or generator to use heading elements in a semantically appropriate way.
 
-Often, heading elements appear within the context of structural elements, such as `<div>` elements that have no real semantics attached to them, or structural elements, such as `<section>`, which *do* carry meaning within the structure of a web page. Sometimes, an incongruence emerges in the use of nested structural elements and the relative semantics of the different heading elements.
+Often, heading elements appear within the context of structural elements, such as `<div>` elements that have no real semantics attached to them, or structural elements, such as `<section>`, which *do* carry meaning within the structure of a web page. Sometimes, an incongruence or conflict emerges between the innate semantics of the heading elements and imposed semantics due to the use of nested structural elements.
 
 For instance, consider this simple scenario:
 
@@ -20,7 +20,7 @@ For instance, consider this simple scenario:
 </section>
 ```
 
-This is perfectly valid HTML, but semantically, it's kind of confused because we have a `h2` element nested at a deeper level than a `h3` element that precedes it.
+This is perfectly valid HTML, but semantically, it's confused because we have a `h2` element nested at a deeper level than a `h3` element that precedes it.
 
 ### Challenge
 
