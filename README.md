@@ -24,12 +24,14 @@ For instance, consider this simple scenario:
 
 This is perfectly valid HTML, but semantically, it's confused because we have a `h2` element nested at a deeper level than a `h3` element that precedes it.
 
-This problem has a number of potential implications, including in the areas of SEO, machine translation from HTML to other formats, automatic summarisation, and generation of tables of contents.
+Another "problem" that arises is skipping heading levels. For example, going from `h2` to `h4` without a `h3` in between. While this is also valid HTML, [it isn't best practice](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements#Usage_notes).
+
+These problems have a number of potential implications, including in the areas of SEO, machine translation from HTML to other formats, automatic summarisation, and generation of tables of contents.
 
 ### Challenge
 
 Your challenge, should you choose to accept it, is two-fold:
-1. Extract the semantic structure of any web page implied by heading elements `h1-h6`. The result should be a, possibly multi-rooted, tree structure. For example, the sequence `h1`, `h2`, `h2`, `h3`, `h4`, `h2`, `h5` yields the tree `[h1, [h2, h2, [h3, [h4]], h2, [h5]]]` assuming a pre-ordered notation. Represent each heading as a key-value pair denoting the header tag and its content, like `"h1": "Heading 1"`. For this part of the task you can ignore any other elements in the page.
+1. Extract the semantic structure of any web page implied by heading elements `h1-h6`. The result should be a, possibly multi-rooted, tree structure. For example, the sequence `h1`, `h2`, `h2`, `h3`, `h4`, `h2`, `h5` yields the tree `[h1, [h2, h2, [h3, [h4]], h2, [h5]]]` assuming a pre-ordered notation. Represent each heading as a key-value pair denoting the header tag and its content, like `"h1": "Heading 1"`. When a heading level is skipped, for example going from `h2` to `h4`, add the pair of headings on either side of the skipped levels as a tuple to an array. For this part of the task you can ignore any other elements in the page.
 1. Check the extracted semantic structure against the actual containment structure of the page, recording any incongruence by adding the out-of-place heading element to an array. For example, if the above heading sequence is shown in the context of the following structure, `<section>, <h1>, <h2>, <h2>, <h3>, <h4>, <section>, <h2>, <h5>, </section>, </section>`, the final `h2` element would be added to the array because the container structure puts that `h2` element in a nested position relative to the position of the `h4` element that precedes it, despite the `h2` element carrying more semantic weight. Use the same key-value representation as above.
 
 Structure your code so that it can:
@@ -57,6 +59,9 @@ In both cases, the result should be a well-formed JSON object encapsulating the 
         ]
       ]
     ]
+  },
+  "skipped-levels": {
+    [({"h2": "An out of place Heading 2"}, {"h5": "Heading 5"})]
   },
   "incongruent-headings": {
     [{"h2": "An out of place Heading 2"}]
