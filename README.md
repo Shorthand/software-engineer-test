@@ -26,7 +26,7 @@ This is perfectly valid HTML, but semantically, it's confused because we have a 
 
 Another "problem" that arises is skipping heading levels. For example, going from `h2` to `h4` without a `h3` in between. While this is also valid HTML, [it isn't best practice](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements#Usage_notes).
 
-These problems have a number of potential implications, including in the areas of SEO, machine translation from HTML to other formats, automatic summarisation, and generation of tables of contents.
+These problems have a number of potential implications, including in the areas of SEO, machine translation from HTML to other formats, accessibility, automatic summarisation, and generation of tables of contents.
 
 ### Challenge
 
