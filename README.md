@@ -31,8 +31,8 @@ These problems have a number of potential implications, including in the areas o
 ### Challenge
 
 Your challenge, should you choose to accept it, is two-fold:
-1. Extract the semantic structure of any web page implied by heading elements `h1-h6`. The result should be a, possibly multi-rooted, tree structure. For example, the sequence `h1`, `h2`, `h2`, `h3`, `h4`, `h2`, `h5` yields the tree `[h1, [h2, h2, [h3, [h4]], h2, [h5]]]` assuming a pre-ordered notation. Represent each heading as a key-value pair denoting the header tag and its content, like `"h1": "Heading 1"`. When a heading level is skipped, for example going from `h2` to `h4`, add the pair of headings on either side of the skipped levels as a tuple to an array. For this part of the task you can ignore any other elements in the page.
-1. Check the extracted semantic structure against the actual containment structure of the page, recording any incongruence by adding the out-of-place heading element to an array. For example, if the above heading sequence is shown in the context of the following structure, `<section>, <h1>, <h2>, <h2>, <h3>, <h4>, <section>, <h2>, <h5>, </section>, </section>`, the final `h2` element would be added to the array because the container structure puts that `h2` element in a nested position relative to the position of the `h4` element that precedes it, despite the `h2` element carrying more semantic weight. Use the same key-value representation as above.
+1. Extract the semantic structure of any web page implied by heading elements `h1-h6`. The result should be a, possibly multi-rooted, tree structure. For example, the sequence `h1`, `h2`, `h2`, `h3`, `h4`, `h2`, `h5` yields the tree `[h1, [h2, h2, [h3, [h4]], h2, [h5]]]` assuming a pre-ordered notation. Represent each heading as a node in a tree where each node consists of a tag, content and children, like `{"tag": "h1", "content": "Heading 1", "children": []`, where the list of children contains nodes of the same form. When a heading level is skipped, for example going from `h2` to `h4`, add the pair of headings on either side of the skipped levels as a tuple to an array. For this part of the task you can ignore any other elements in the page.
+1. Check the extracted semantic structure against the actual containment structure of the page, recording any incongruence by adding the out-of-place heading element to an array. For example, if the above heading sequence is shown in the context of the following structure, `<section>, <h1>, <h2>, <h2>, <h3>, <h4>, <section>, <h2>, <h5>, </section>, </section>`, the final `h2` element would be added to the array because the container structure puts that `h2` element in a nested position relative to the position of the `h4` element that precedes it, despite the `h2` element carrying more semantic weight. Use the same object representation as above.
 
 Structure your code so that it can be run as a:
 1. standalone command on the command line, where the URL to process is given as an argument, e.g., `checkheadings https://foo.com`
@@ -41,31 +41,43 @@ Structure your code so that it can be run as a:
 In both cases, the result should be a well-formed JSON object encapsulating the outputs of the two parts of the task above. For example, given the above example, the response might look something like this:
 ```
 {
-  "semantic-structure": {
-    [
-      {"h1": "Heading 1"},
-      [
-        {"h2": "Heading 2"},
-        {"h2": "Another Heading 2"},
-        [
-          {"h3": "Heading 3"},
-          [
-            {"h4": "Heading 4"}
-          ]
-        ],
-        {"h2": "An out of place Heading 2"},
-        [
-          {"h5": "Heading 5"}
-        ]
+  "semantic-structure": [
+    {"tag": "h1",
+      "content": "Heading 1",
+      "children": [
+        {"tag": "h2",
+         "content": "Heading 2"
+        },
+        {"tag": "h2",
+         "content": "Another Heading 2",
+         "children": [
+           {"tag": "h3",
+            "content": "Heading 3",
+            "children": [
+              {"tag": "h4",
+               "content": "Heading 4"
+              }
+            ]
+           }
+         ]
+        },
+        {"tag": "h2",
+         "content": "An out of place Heading 2",
+         "children": [
+           {"tag": "h5",
+            "content": "Heading 5"
+           }
+         ]
+        }
       ]
-    ]
-  },
-  "skipped-levels": {
-    [({"h2": "An out of place Heading 2"}, {"h5": "Heading 5"})]
-  },
-  "incongruent-headings": {
-    [{"h2": "An out of place Heading 2"}]
-  }
+    }
+  ],
+  "skipped-levels": [
+    ({"tag": "h2", "content": "An out of place Heading 2"}, {"tag": "h5", "content": "Heading 5"})
+  ],
+  "incongruent-headings": [
+    {"tag": "h2", "content": "An out of place Heading 2"}
+  ]
 }
 ```
 
