@@ -104,7 +104,7 @@ Assuming that you submit a "correct" solution, we are then first and foremost in
 
 ### Submitting your solution
 
-Fork this repository, create your solution in your fork, then open a pull request against this (origin) repo and let us know that you've completed the challenge.
+Fork this repository, make your fork private, create your solution in your fork, then add @rickyrobinson or another member of the Shorthand team to your fork, and let us know that you've completed the challenge.
 
 ---
 
