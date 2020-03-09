@@ -75,7 +75,7 @@ In both cases, the result should be a well-formed JSON object encapsulating the 
     }
   ],
   "skipped-levels": [
-    ({"tag": "h2", "content": "An out of place Heading 2"}, {"tag": "h5", "content": "Heading 5"})
+    {"tag": "h2", "content": "An out of place Heading 2"}, {"tag": "h5", "content": "Heading 5"}
   ],
   "incongruent-headings": [
     {"tag": "h2", "content": "An out of place Heading 2"}
