@@ -126,7 +126,9 @@ Assuming that you submit a "correct" solution, we are then first and foremost in
 
 ### Submitting your solution
 
-Fork this repository, make your fork private, create your solution in your fork, then add @ckortekaas and @rickyrobinson to your fork, and let us know that you've completed the challenge.
+Clone this repo and create a new, private repository to use as the remote origin.
+
+Create your solution there and, when it's ready, add @ckortekaas to your fork, and let us know that you've completed the challenge.
 
 ---
 
